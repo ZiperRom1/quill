@@ -1,6 +1,6 @@
 #pragma once
 
-#include "quill/Quill.h"
+#include <quill/Quill.h>
 
 class QuillWrapper
 {

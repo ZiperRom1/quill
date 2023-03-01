@@ -1,0 +1,17 @@
+services:
+
+  # ----------------------------------------------------- Builders -----------------------------------------------------
+
+  builder-windows-mingw:
+    build:
+      context: .
+      args:
+        - MINGW_VERSION=${MINGW_VERSION}
+        - CMAKE_VERSION=${CMAKE_VERSION}
+        - PKG_CONFIG_VERSION=${PKG_CONFIG_VERSION}
+        - BINUTILS_VERSION=${BINUTILS_VERSION}
+        - GCC_VERSION=${GCC_VERSION}
+        - QUILL_VERSION=${QUILL_VERSION}
+        - GOOGLETEST_VERSION=${GOOGLETEST_VERSION}
+        - MAX_CPU_CORES=${MAX_CPU_CORES}
+    image: local/builder-windows-mingw:latest
