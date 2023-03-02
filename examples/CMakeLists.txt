@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 project(singleton_example)
-find_package(quill CONFIG REQUIRED)
+
 add_subdirectory(external_lib)
 
 add_executable(example_trivial_static example_trivial.cpp)

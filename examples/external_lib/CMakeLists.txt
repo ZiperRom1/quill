@@ -1,6 +1,6 @@
 project(quill_wrapper)
 
-find_package(quill CONFIG REQUIRED)
+find_package(quill 2.7.0 REQUIRED CONFIG)
 
 add_library(quill_wrapper_shared SHARED quill_wrapper.cpp)
 add_library(quill_wrapper_static STATIC quill_wrapper.cpp)
