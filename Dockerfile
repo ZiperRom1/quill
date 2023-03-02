@@ -24,6 +24,8 @@ RUN wget https://github.com/odygrd/quill/archive/refs/tags/v${QUILL_VERSION}.tar
     cd /tmp && ls && tar -xvzf quill-${QUILL_VERSION}.tar.gz && cd quill-${QUILL_VERSION} && \
     cmake -S . -B build_shared ${CMAKE_COMMON_OPTION_SHARED} && \
     cmake --build build_shared -j ${MAX_CPU_CORES} && cmake --install build_shared && \
+    cmake -S . -B build_shared_gcc -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON && \
+    cmake --build build_shared_gcc -j ${MAX_CPU_CORES} && cmake --install build_shared_gcc && \
     cmake -S . -B build_static ${CMAKE_COMMON_OPTION_STATIC} && \
     cmake --build build_static -j ${MAX_CPU_CORES} && cmake --install build_static && \
     rm -rf /tmp/quill-${QUILL_VERSION}.tar.gz /tmp/quill-${QUILL_VERSION}
